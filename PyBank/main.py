@@ -15,10 +15,6 @@ with open(data, newline='') as csvfile:
     csv_header = next(csvreader)
     # print(csv_header)
 
-    # Read each row of data after the header
-    #for row in csvreader:
-        #print(row)
-
     for row in csvreader:
         results[row[0]] = float(row[1])
     #line_count += 1
@@ -38,7 +34,6 @@ avg = sum(results.values()) / y
 print("Average Change: $", avg)
 
 # The greatest increase in profits (date and amount) over the entire period
-#x = list(results.values())
 
 maximum = max(results, key=results.get)
 print("Greatest Increase in Profits:", maximum, "($",results[maximum],")")
